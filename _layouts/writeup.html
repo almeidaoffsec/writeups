@@ -1,0 +1,32 @@
+---
+layout: default
+---
+
+<article class="container writeup-post">
+
+  <header class="writeup-post__header">
+    <div class="writeup-post__meta-top">
+      <span class="badge badge--{{ page.difficulty }}">{{ page.difficulty | capitalize }}</span>
+      <span class="label">{{ page.platform }} · {{ page.date | date: "%d %b %Y" }}</span>
+    </div>
+
+    <h1>{{ page.title }}</h1>
+
+    {% if page.tags %}
+    <div class="writeup-post__tags">
+      {% for tag in page.tags %}
+      <span class="badge badge--info">{{ tag }}</span>
+      {% endfor %}
+    </div>
+    {% endif %}
+  </header>
+
+  <div class="writeup-prose">
+    {{ content }}
+  </div>
+
+  <footer class="writeup-post__footer">
+    <a href="/" class="btn-secondary">← Todos os writeups</a>
+  </footer>
+
+</article>

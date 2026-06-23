@@ -1,0 +1,29 @@
+title: Writeups — almeidaoffsec
+description: CTFs, labs e HackTheBox documentados em tempo real.
+baseurl: ""
+url: "https://writeups.almeidaoffsec.com"
+
+collections:
+  writeups:
+    output: true
+
+defaults:
+  - scope:
+      type: writeups
+    values:
+      layout: writeup
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: "highlight"
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - .github/
+  - "0001-wup-tryhackme-cat-pictures/"
+  - "sqlmapproject-sqlmap-e659543/"

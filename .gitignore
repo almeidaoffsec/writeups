@@ -1,0 +1,13 @@
+*.ovpn
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+Gemfile.lock
+
+# Artefatos de CTF (mantidos localmente, não publicados)
+0001-wup-tryhackme-cat-pictures/
+sqlmapproject-sqlmap-e659543/
+*.thm
+*.php5
+*_original

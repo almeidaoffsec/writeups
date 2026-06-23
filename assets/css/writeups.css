@@ -1,0 +1,197 @@
+/* ─── Estrutura da página de writeup ─── */
+
+.writeup-post {
+  padding: 4rem 1.5rem;
+  max-width: 800px;
+}
+
+.writeup-post__header {
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 0.5px solid rgba(74, 158, 255, 0.12);
+}
+
+.writeup-post__meta-top {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.writeup-post__header h1 {
+  margin: 0 0 1rem;
+  color: var(--color-text-primary);
+}
+
+.writeup-post__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.writeup-post__footer {
+  margin-top: 4rem;
+  padding-top: 2rem;
+  border-top: 0.5px solid rgba(74, 158, 255, 0.12);
+}
+
+/* ─── Cards da listagem ─── */
+
+.writeup-card__meta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.writeup-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+
+/* ─── Prosa: conteúdo gerado pelo kramdown ─── */
+
+.writeup-prose {
+  color: var(--color-text-primary);
+  line-height: 1.75;
+}
+
+.writeup-prose h2,
+.writeup-prose h3,
+.writeup-prose h4 {
+  font-family: var(--font-display);
+  color: var(--color-text-primary);
+  margin: 2.5rem 0 1rem;
+  line-height: 1.3;
+}
+
+.writeup-prose h2 { font-size: 1.5rem; }
+.writeup-prose h3 { font-size: 1.2rem; }
+.writeup-prose h4 { font-size: 1rem; font-weight: 600; }
+
+.writeup-prose p {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  margin: 0 0 1.25rem;
+  color: var(--color-text-primary);
+}
+
+.writeup-prose a {
+  color: var(--color-scan-blue);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.writeup-prose a:hover {
+  color: var(--color-terminal);
+}
+
+.writeup-prose ul,
+.writeup-prose ol {
+  font-family: var(--font-body);
+  padding-left: 1.5rem;
+  margin: 0 0 1.25rem;
+}
+
+.writeup-prose li {
+  margin-bottom: 0.4rem;
+  color: var(--color-text-primary);
+}
+
+/* Código inline */
+.writeup-prose code {
+  font-family: var(--font-code);
+  font-size: 0.875em;
+  color: var(--color-terminal);
+  background: rgba(0, 229, 200, 0.08);
+  padding: 0.15em 0.4em;
+  border-radius: 4px;
+}
+
+/* Blocos de código (gerados pelo Rouge / kramdown) */
+.writeup-prose pre,
+.writeup-prose .highlight {
+  background: var(--color-void);
+  border: 0.5px solid rgba(74, 158, 255, 0.2);
+  border-left: 3px solid var(--color-terminal);
+  border-radius: 8px;
+  overflow-x: auto;
+  margin: 1.5rem 0;
+}
+
+.writeup-prose pre code,
+.writeup-prose .highlight code {
+  font-family: var(--font-code);
+  font-size: 0.875rem;
+  color: var(--color-terminal);
+  background: none;
+  padding: 1rem 1.25rem;
+  display: block;
+  line-height: 1.6;
+}
+
+/* Citações */
+.writeup-prose blockquote {
+  border-left: 3px solid var(--color-scan-blue);
+  margin: 1.5rem 0;
+  padding: 0.75rem 1.25rem;
+  background: rgba(74, 158, 255, 0.04);
+  border-radius: 0 6px 6px 0;
+}
+
+.writeup-prose blockquote p {
+  margin: 0;
+  color: var(--color-text-secondary);
+  font-style: italic;
+}
+
+/* Imagens */
+.writeup-prose img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  border: 0.5px solid rgba(74, 158, 255, 0.15);
+  display: block;
+  margin: 1.5rem auto;
+}
+
+/* Divisores */
+.writeup-prose hr {
+  border: none;
+  border-top: 0.5px solid rgba(74, 158, 255, 0.12);
+  margin: 2.5rem 0;
+}
+
+/* Tabelas */
+.writeup-prose table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  margin: 1.5rem 0;
+}
+
+.writeup-prose th {
+  background: rgba(74, 158, 255, 0.08);
+  color: var(--color-text-primary);
+  font-weight: 600;
+  padding: 0.625rem 1rem;
+  text-align: left;
+  border-bottom: 0.5px solid rgba(74, 158, 255, 0.2);
+}
+
+.writeup-prose td {
+  padding: 0.625rem 1rem;
+  color: var(--color-text-secondary);
+  border-bottom: 0.5px solid rgba(74, 158, 255, 0.08);
+}
+
+/* ─── Responsivo ─── */
+
+@media (max-width: 768px) {
+  .writeup-post {
+    padding: 2rem 1rem;
+  }
+}

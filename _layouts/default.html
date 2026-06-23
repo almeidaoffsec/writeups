@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title }} — almeidaoffsec</title>
+  <meta name="description" content="{{ page.description | default: site.description }}">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/almeidaoffsec/design-system@main/css/base.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/almeidaoffsec/design-system@main/css/components.css">
+  <link rel="stylesheet" href="/assets/css/writeups.css">
+</head>
+<body data-page="writeups"{% if page.i18n_src %} data-i18n-src="{{ page.i18n_src }}"{% endif %}>
+
+  <div id="site-header"></div>
+
+  {{ content }}
+
+  <div id="site-footer"></div>
+
+  <script src="https://cdn.jsdelivr.net/gh/almeidaoffsec/design-system@main/js/site-chrome.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/almeidaoffsec/design-system@main/js/i18n.js"></script>
+</body>
+</html>

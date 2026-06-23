@@ -1,0 +1,54 @@
+---
+layout: default
+title: Writeups
+i18n_src: /i18n/
+---
+
+<section class="hero" style="padding-bottom: 2rem;">
+  <div class="container">
+    <span class="label" data-i18n="writeups.label">Aprendizado em público</span>
+    <h1 data-i18n="writeups.heading">Writeups</h1>
+    <p data-i18n="writeups.subtitle">CTFs, labs e HackTheBox — documentados em tempo real.</p>
+  </div>
+</section>
+
+<section style="padding-top: 0;">
+  <div class="container">
+    {% assign sorted_writeups = site.writeups | sort: "date" | reverse %}
+
+    {% if sorted_writeups.size > 0 %}
+    <div class="grid-2">
+      {% for writeup in sorted_writeups %}
+      <article class="card">
+        <div class="writeup-card__meta">
+          <span class="badge badge--{{ writeup.difficulty }}">{{ writeup.difficulty | capitalize }}</span>
+          <span class="label">{{ writeup.platform }} · {{ writeup.date | date: "%d %b %Y" }}</span>
+        </div>
+
+        <h3><a href="{{ writeup.url }}">{{ writeup.title }}</a></h3>
+        <p>{{ writeup.description }}</p>
+
+        {% if writeup.tags %}
+        <div class="writeup-card__tags">
+          {% for tag in writeup.tags %}
+          <span class="badge badge--info">{{ tag }}</span>
+          {% endfor %}
+        </div>
+        {% endif %}
+
+        <a href="{{ writeup.url }}" class="btn-secondary" data-i18n="writeups.card.cta">Ler writeup →</a>
+      </article>
+      {% endfor %}
+    </div>
+
+    {% else %}
+    <div class="grid-2">
+      <div class="card">
+        <span class="badge badge--info">CTF</span>
+        <h3 data-i18n="writeups.empty.title">Primeiro writeup em breve</h3>
+        <p data-i18n="writeups.empty.body">Assim que o primeiro CTF for documentado, ele aparece aqui.</p>
+      </div>
+    </div>
+    {% endif %}
+  </div>
+</section>
