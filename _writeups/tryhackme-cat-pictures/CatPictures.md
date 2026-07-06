@@ -5,7 +5,8 @@ date: 2026-07-06
 platform: "TryHackMe"
 difficulty: "low"
 tags: ["Linux", "Privilege Escalation", "Port Knocking", "Docker Escape"]
-description: "."
+description: "Port knocking para liberar FTP, credenciais vazadas para um serviço de shell customizado, engenharia reversa de um binário com senha hardcoded para gerar chave SSH, e escape de container Docker via injeção em script d
+e limpeza executado pelo host."
 ---
 
 ## Reconhecimento
