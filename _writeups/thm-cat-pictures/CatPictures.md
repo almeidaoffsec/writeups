@@ -17,13 +17,13 @@ Abaixo está o processo completo.
 
 ## Reconhecimento
 
-```
+
 
 Port Scan completo (`nmap -sS catpictures.thm -T4 -p-`):
 
 ![nmap -sS -p-](images/nmap.png)
 
-```
+
 ```
 PORT     STATE    SERVICE
 21/tcp   filtered ftp
