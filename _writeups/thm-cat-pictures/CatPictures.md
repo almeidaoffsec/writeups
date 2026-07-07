@@ -44,7 +44,7 @@ A aplicação web na porta 8080 é um fórum phpBB ("Cat Pictures"). Um post no 
 
 > Knock knock! Magic numbers: 1111, 2222, 3333, 4444
 
-Criei um script para fazer o knock mas existem ferramentas prontas para tal, fiz pela diversão (`[knock.py](https://github.com/almeidaoffsec/writeups/blob/main/_writeups/thm-cat-pictures/scripts/knock.py)`):
+Criei um script para fazer o knock mas existem ferramentas prontas para tal, fiz pela diversão (`![knock.py](https://github.com/almeidaoffsec/writeups/blob/main/_writeups/thm-cat-pictures/scripts/knock.py)`):
 
 ```
 python3 knock.py -h catpictures.thm -kp 1111,2222,3333,4444 -tp 21,22 -t 0.5
