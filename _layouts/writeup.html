@@ -30,3 +30,10 @@ layout: default
   </footer>
 
 </article>
+
+<script>
+  document.querySelectorAll('.writeup-prose a[href^="http"]').forEach(function(a) {
+    a.setAttribute('target', '_blank');
+    a.setAttribute('rel', 'noopener noreferrer');
+  });
+</script>
