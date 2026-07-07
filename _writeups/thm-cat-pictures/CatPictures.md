@@ -125,7 +125,7 @@ Conteúdo original do script (aparenta ser executado periodicamente, possivelmen
 rm -rf /tmp/*
 ```
 
-Como o script provavelmente é executado pelo host (fora do container) — por cron ou processo de manutenção —, foi injetado um shell reverso adicional ao final do arquivo, como técnica de **container escape**:
+Como o script provavelmente é executado pelo host (fora do container) por cron ou processo de manutenção, foi injetado um shell reverso adicional ao final do arquivo, como técnica de **container escape**:
 
 ![clean.sh com shell reverso injetado](images/cleansh_inject.png)
 
