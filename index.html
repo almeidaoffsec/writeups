@@ -16,27 +16,41 @@ i18n_src: /i18n/
   <div class="container">
     {% assign sorted_writeups = site.writeups | sort: "date" | reverse %}
 
+    {% assign cdn = "https://cdn.jsdelivr.net/gh/almeidaoffsec/design-system@main/assets/platforms" %}
     {% if sorted_writeups.size > 0 %}
     <div class="grid-2">
       {% for writeup in sorted_writeups %}
-      <article class="card">
-        <div class="writeup-card__meta">
-          <span class="badge badge--{{ writeup.difficulty }}">{{ writeup.difficulty | capitalize }}</span>
-          <span class="label">{{ writeup.platform }} · {{ writeup.date | date: "%d %b %Y" }}</span>
+      {% if writeup.platform == "HackTheBox" %}
+        {% assign platform_logo = cdn | append: "/hackthebox.svg" %}
+      {% elsif writeup.platform == "TryHackMe" %}
+        {% assign platform_logo = cdn | append: "/tryhackme.svg" %}
+      {% else %}
+        {% assign platform_logo = cdn | append: "/ctf.svg" %}
+      {% endif %}
+      {% assign cover = writeup.image | default: platform_logo %}
+      <article class="card" style="padding:0;overflow:hidden;">
+        <div style="background:var(--color-void);display:flex;align-items:center;justify-content:center;padding:2rem;min-height:10rem;">
+          <img src="{{ cover }}" alt="{{ writeup.platform }}" style="max-height:7rem;max-width:80%;object-fit:contain;">
         </div>
+        <div style="padding:1.5rem;">
+          <div class="writeup-card__meta">
+            <span class="badge badge--{{ writeup.difficulty }}">{{ writeup.difficulty | capitalize }}</span>
+            <span class="label">{{ writeup.platform }} · {{ writeup.date | date: "%d %b %Y" }}</span>
+          </div>
 
-        <h3><a href="{{ writeup.url }}">{{ writeup.title }}</a></h3>
-        <p>{{ writeup.description }}</p>
+          <h3><a href="{{ writeup.url }}">{{ writeup.title }}</a></h3>
+          <p>{{ writeup.description }}</p>
 
-        {% if writeup.tags %}
-        <div class="writeup-card__tags">
-          {% for tag in writeup.tags %}
-          <span class="badge badge--info">{{ tag }}</span>
-          {% endfor %}
+          {% if writeup.tags %}
+          <div class="writeup-card__tags">
+            {% for tag in writeup.tags %}
+            <span class="badge badge--info">{{ tag }}</span>
+            {% endfor %}
+          </div>
+          {% endif %}
+
+          <a href="{{ writeup.url }}" class="btn-secondary" data-i18n="writeups.card.cta">Ler writeup →</a>
         </div>
-        {% endif %}
-
-        <a href="{{ writeup.url }}" class="btn-secondary" data-i18n="writeups.card.cta">Ler writeup →</a>
       </article>
       {% endfor %}
     </div>
